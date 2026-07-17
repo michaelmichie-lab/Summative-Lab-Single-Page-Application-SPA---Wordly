@@ -18,9 +18,7 @@ window.addEventListener('load', function() {
   // Draw bookmarks lists on start
   updateSavedUI();
 
-  // ===================================================================
   // Theme Switching System
-  // ===================================================================
   themeToggle.addEventListener('click', function() {
     const isNightNow = document.body.classList.toggle('night');
     if (isNightNow) {
@@ -34,9 +32,7 @@ window.addEventListener('load', function() {
     document.body.classList.add('night');
   }
 
-  // ===================================================================
   // Word Lookups
-  // ===================================================================
   searchForm.addEventListener('submit', function(event) {
     event.preventDefault(); 
     const wordToSearch = wordInput.value.trim().toLowerCase();
@@ -73,9 +69,7 @@ window.addEventListener('load', function() {
       });
   }
 
-  // ===================================================================
   // Render Dynamic Cards (Includes Audio & Save Buttons)
-  // ===================================================================
   function renderResult(data) {
     const word = data.word;
     
@@ -159,9 +153,7 @@ window.addEventListener('load', function() {
     });
   }
 
-  // ===================================================================
   // Bookmark Drawer Controller
-  // ===================================================================
   function toggleSaveWord(word) {
     const index = savedWords.indexOf(word);
 
@@ -209,7 +201,7 @@ window.addEventListener('load', function() {
 function searchWord(word) {
   resultsContainer.innerHTML = "<p style='text-align: center; opacity: 0.8;'>Searching dictionary...</p>";
 
-  // Right here! We take the API link and glue the user's searched word to the end of it
+  // Right here we take the API link and glue the user's searched word to the end of it
   fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + word)
     .then(function(response) {
       if (response.ok === false) {
