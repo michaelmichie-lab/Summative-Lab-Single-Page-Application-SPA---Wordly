@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wordly</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header with Brand & Mode Switcher -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-mark">
+          <span style="font-size: 2rem;">📖</span>
+        </div>
+        <div class="brand-text">
+          <h1 style="font-size: 1.5rem; margin: 0;">WordBook</h1>
+        </div>
+      </div>
+      <button id="themeToggle" class="chip" style="font-weight: bold;">
+        🌓 Toggle Mode
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Workspace -->
+  <main class="content">
+
+    <!-- Search Form & Quick Chips -->
+    <section class="lookup-slot">
+      <form id="searchForm" class="search-form">
+        <input 
+          type="text" 
+          id="wordInput" 
+          placeholder="Type a word here..." 
+          autocomplete="off" 
+          required
+        >
+        <button type="submit" id="searchBtn">Search</button>
+      </form>
+
+      <div class="chips">
+        <span style="font-size: 0.9rem; opacity: 0.8; margin-right: 5px;">Try:</span>
+        <button class="chip" data-word="serendipity">serendipity</button>
+        <button class="chip" data-word="wanderlust">wanderlust</button>
+        <button class="chip" data-word="resonance">resonance</button>
+      </div>
+    </section>
+
+    <!-- Dynamic Result Card (Loaded by JS) -->
+    <section id="resultsContainer" class="results">
+      <div style="text-align: center; opacity: 0.6; padding-top: 40px;">
+        <p>Type a word above to explore definitions, parts of speech, and examples.</p>
+      </div>
+    </section>
+
+    <!-- Bookmarks Drawer -->
+    <section class="saved-drawer">
+      <div class="saved-drawer-head">
+        <h3 style="margin: 0; font-size: 1.25rem;">Saved Catalog</h3>
+        <span id="savedCount">0</span>
+      </div>
+      <div id="savedList" class="saved-list">
+        <p style="opacity: 0.6; font-size: 0.95rem;">No saved entries yet.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

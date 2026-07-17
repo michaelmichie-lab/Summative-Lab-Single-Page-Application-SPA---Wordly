@@ -1,0 +1,337 @@
+/* ===================================================================
+   1. LIGHT THEME COLORS (Modern & Clean)
+   =================================================================== */
+body {
+  margin: 0;                    /* Removes default browser edge spacing */
+  padding-left: 14px;           /* Gives a little buffer room on the left side of the screen */
+  background-color: #F8F9FA;    /* Soft off-white page background */
+  color: #1A1D20;               /* Sleek dark charcoal for easy reading */
+  /* Fallback fonts: if the device doesn't have apple-system, it tries BlinkMacSystemFont, and so on */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;             /* Adds breathing room between lines of text */
+}
+
+/* Page wrapper to keep content centered and readable on wide screens */
+.content {
+  max-width: 800px;             /* Prevents content from stretching too wide */
+  margin: 0 auto;               /* Magic trick to center a block element horizontally */
+  padding: 40px 20px;           /* Spacing: 40px top/bottom, 20px left/right */
+}
+
+/* Cards setup for Search Form, Results, and Bookmarks */
+.search-form, 
+.entry-card, 
+.saved-card {
+  background-color: #FFFFFF;    /* Clean white card backgrounds */
+  border: 1px solid rgba(0, 0, 0, 0.08); /* A super faint border line */
+  border-radius: 12px;          /* Smooth, modern rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); /* Soft dropdown shadow underneath */
+  transition: all 0.2s ease-in-out; /* Animates hover changes smoothly */
+}
+
+/* Accent highlight: Gives saved search results a thick left edge */
+.entry-card.is-saved {
+  border-left: 6px solid #F26419; /* Sunset coral color theme stripe */
+}
+
+/* Matching stripe for the bookmark list cards */
+.saved-card {
+  border-left: 4px solid #F26419;
+}
+
+/* Active typing state for the search bar */
+#wordInput:focus {
+  outline: none;                /* Removes the default browser focus ring */
+  background-color: #F1F5F9;    /* Changes to a soft grey so users know they are typing */
+}
+
+/* Main search submit button */
+#searchBtn {
+  border: none;                 /* Removes the default button border */
+  background-color: #1C2541;    /* Deep navy blue */
+  color: #FFFFFF;               /* White text */
+  padding: 0 24px;              /* Expands the button width */
+  cursor: pointer;              /* Changes the mouse pointer to a hand on hover */
+  font-weight: 500;             /* Medium bold font */
+  border-radius: 0 10px 10px 0; /* Rounds only the top-right and bottom-right corners */
+  transition: background-color 0.2s ease; /* Transitions background-color changes */
+}
+
+/* Search button hover state */
+#searchBtn:hover {
+  background-color: #F26419;    /* Swaps blue to coral on mouse-over */
+}
+
+/* Part of Speech metadata badge (noun, verb, etc.) */
+.pos-label {
+  color: #33658A;               /* Ocean blue tone */
+  font-weight: 600;             /* Semi-bold weight */
+  font-size: 0.85rem;           /* Slightly smaller than normal body text */
+  text-transform: uppercase;    /* Forces text to be all capitals */
+  letter-spacing: 0.05em;       /* Puts elegant spacing between individual letters */
+}
+
+/* Circular Audio Player Button */
+.audio-btn {
+  background-color: #E2EAFC;    /* Soft sky blue background */
+  border: none;
+  border-radius: 50%;           /* Magic trick to turn any equal square into a perfect circle */
+  width: 42px;
+  height: 42px;
+  display: inline-flex;         /* Helps center the icon perfectly inside the circle */
+  align-items: center;          /* Centers vertically */
+  justify-content: center;      /* Centers horizontally */
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+/* Audio button hover animation */
+.audio-btn:hover {
+  background-color: #00B4D8;    /* Dynamic electric blue */
+  transform: scale(1.08);       /* Gently zooms the circle size up by 8% */
+}
+
+
+/* ===================================================================
+   2. NIGHT THEME COLORS (Modern Dark Mode)
+   =================================================================== */
+/* These rules only apply when JavaScript adds the '.night' class to the <body> element */
+
+body.night {
+  background-color: #0B0F19;    /* Deep space midnight-blue background */
+  color: #F4F5F6;               /* Clean white text */
+}
+
+/* Dark theme overrides for cards */
+body.night .search-form,
+body.night .entry-card,
+body.night .saved-card {
+  background-color: #151D30;    /* Dark slate slate card background */
+  border-color: rgba(255, 255, 255, 0.05); /* Soft light border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow for high contrast */
+}
+
+/* Dark mode electric blue accents for saved cards */
+body.night .entry-card.is-saved {
+  border-left: 6px solid #00B4D8; 
+}
+
+body.night .saved-card {
+  border-left: 4px solid #00B4D8; 
+}
+
+/* Dark mode search focus state */
+body.night #wordInput:focus {
+  background-color: #1E2942;    /* Navy slate focus background */
+  color: #F4F5F6;
+}
+
+/* Dark mode search button states */
+body.night #searchBtn {
+  background-color: #F4F5F6;    /* Bright white button */
+  color: #0B0F19;               /* Midnight-blue text */
+}
+
+body.night #searchBtn:hover {
+  background-color: #00B4D8;    /* Electric blue hover */
+  color: #0B0F19;
+}
+
+/* Dark mode metadata label override */
+body.night .pos-label {
+  color: #90E0EF;               /* Light neon-blue label */
+}
+
+/* Dark mode audio button overrides */
+body.night .audio-btn {
+  background-color: #22333B;    /* Charcoal blue background */
+}
+
+body.night .audio-btn:hover {
+  background-color: #00B4D8;
+}
+
+
+/* ===================================================================
+   3. LAYOUT & STRUCTURE (These values do not change across themes)
+   =================================================================== */
+
+/* Adds space above and below the search block */
+.lookup-slot {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Wraps input field and button */
+.search-form {
+  display: flex;                /* Arranges input and button side-by-side */
+  padding: 4px;                 /* Outer padding acting as an inner border frame */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* Text Input Area */
+#wordInput {
+  flex: 1;                      /* Forces the input field to hog all available space */
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  background-color: transparent; /* Allows parent styles to bleed through */
+  color: inherit;               /* Automatically adjusts text color for light/dark mode */
+  border-radius: 8px;
+}
+
+/* Quick recommendations container */
+.chips {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;              /* Wraps chips onto a new line if they run out of space */
+  gap: 8px;                     /* Grid spacing between sibling chips */
+}
+
+/* Quick recommendation pill buttons */
+.chip {
+  background-color: rgba(0, 0, 0, 0.03); /* Super faint grey pill style background */
+  border: 1px solid transparent;
+  border-radius: 20px;          /* Capsule look */
+  padding: 6px 14px;
+  cursor: pointer;
+  color: inherit;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+/* Chip style for Dark Mode */
+body.night .chip {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Chip hover interaction */
+.chip:hover {
+  background-color: transparent;
+  border-color: currentColor;   /* Turns border color matching the current text color */
+}
+
+/* Result Card Box */
+.results {
+  margin-top: 30px;
+  min-height: 150px;            /* Ensures screen height doesn't snap suddenly */
+}
+
+/* Title bar of the dictionary result card */
+.entry-head {
+  display: flex;
+  justify-content: space-between; /* Word details on the left, save button on the right */
+  align-items: center;          /* Centers word details & save button vertically */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06); /* Soft break rule */
+  padding-bottom: 16px;
+}
+
+/* Dark mode title boundary divider */
+body.night .entry-head {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Grouping phonetic details alongside speaker button */
+.entry-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Layout blocks for each part of speech section */
+.pos-block {
+  margin-top: 24px;
+}
+
+/* Ordered list for multiple definitions */
+.def-list {
+  margin: 12px 0;
+  padding-left: 20px;           /* Indentation spacing for numbers */
+}
+
+.def-list li {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+/* Context/Usage example block */
+.def-example {
+  display: block;               /* Forces example onto its own clean line */
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-top: 4px;
+  opacity: 0.7;                 /* Softens the text appearance */
+}
+
+/* Saved Catalog / Bookmarks footer block */
+.saved-drawer {
+  margin-top: 60px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 30px;
+}
+
+/* Border line adjustment for Dark Mode */
+body.night .saved-drawer {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Header within Saved drawer */
+.saved-drawer-head {
+  display: flex;
+  align-items: center;          
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Tiny circular badge keeping track of stored word count */
+#savedCount {
+  background-color: #F26419;    /* Coral highlight background */
+  color: white; 
+  border-radius: 50%;           /* Circular badge */
+  padding: 2px 10px; 
+  font-size: 0.85rem; 
+  font-weight: bold;
+}
+
+/* Grid holding our small bookmark pill items */
+.saved-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Individual bookmark list card */
+.saved-card {
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hover transform: lifts card slightly on Z-axis */
+.saved-card:hover {
+  transform: translateY(-2px);  /* Floats item slightly upwards */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* Darkens shadow */
+}
+
+/* Hover transform in Dark Mode */
+body.night .saved-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Deletion trigger symbol (×) within saved bookmark elements */
+.saved-card .remove {
+  color: #E63946;               /* Warning pink-red */
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+/* Grows delete icon slightly larger on hover */
+.saved-card .remove:hover {
+  transform: scale(1.2); 
+}
