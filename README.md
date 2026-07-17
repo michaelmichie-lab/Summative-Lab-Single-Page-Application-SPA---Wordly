@@ -26,7 +26,7 @@ wordly/
 ├── assets/
 │   └── screenshot.png       # App screenshot
 ├── css/
-│   └── style.css            # Styles for light, dark, and layout
+│   └── styles.css            # Styles for light, dark, and layout
 ├── js/
 │   └── index.js             # API fetching and storage logic
 ├── index.html               # Main SPA structure
